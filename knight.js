@@ -37,4 +37,14 @@ function knightMoves(start,end) {
             }
         }
     }
+
+    function buildPath(endNode) {
+        const path = [];
+        let node = endNode;
+        while (node !== null) {
+            path.unshift(node.square);
+            node = node.parent;
+        }
+        return path;
+    }
 }
