@@ -12,6 +12,8 @@ function getMoves ([x,y]) {
        .filter(isOnBoard);
 }
 
+const toKey = ([x, y]) => `${x},${y}`;
+
 function knightMoves(start,end) {
     if (!isOnBoard (start) || !isOnBoard(end)) {
         console.log("Both squares must be on the board (0 to 7).");
@@ -33,7 +35,7 @@ function knightMoves(start,end) {
         for (const next of getMoves(current.square)) {
             if (!visited.has(toKey(next))) {
                 visited.add(toKey(next));
-                queue.push({squeare:next,parent:current});
+                queue.push({square:next,parent:current});
             }
         }
     }
@@ -64,3 +66,5 @@ knightMoves([0, 0], [7, 7]);
 knightMoves([3, 3], [4, 3]);  
 knightMoves([2, 2], [2, 2]);  
 knightMoves([0, 0], [8, 8]);  
+
+module.exports = knightMoves;
