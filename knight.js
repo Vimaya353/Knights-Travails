@@ -5,3 +5,10 @@ const MOVES = [
 function isOnBoard([x,y]) {
     return x >= 0 && x<= 7 && y >=0 && y <=7;
 }
+
+function getMoves ([x,y]) {
+    return MOVES
+       .map(([dx,dy]) => [x+dx, y+dy])
+       .filter(isOnBoard);
+}
+
