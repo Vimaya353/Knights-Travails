@@ -47,4 +47,10 @@ function knightMoves(start,end) {
         }
         return path;
     }
+
+    function printPath(path) {
+        const moves = path.length - 1;
+        console.log(`You made it in ${moves} moves! Here's your path:`);
+        path.forEach((square) => console.log(`  [${square}]`));
+    }
 }
